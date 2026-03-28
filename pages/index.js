@@ -221,21 +221,36 @@ const articles = [
   {
     tag: "Immune Deep Dive",
     title: "Low-Dose Naltrexone and Your Immune Markers: What the Science Actually Shows",
-    desc: "A walk through what LDN does to measurable immune markers like cytokines and T-cells — with real lab data mapped against the research.",
+    desc: "A walk through what LDN does to measurable immune markers like cytokines and T-cells \u2014 with real lab data mapped against the research.",
+    expanded: [
+      "Low-dose naltrexone (LDN) has gained significant attention in reproductive immunology circles for its ability to modulate immune function at doses far below those used for addiction treatment. At 1.5\u20134.5mg, LDN temporarily blocks opioid receptors, triggering an upregulation of endorphins and enkephalins that, in turn, help regulate immune cell behavior.",
+      "The research shows measurable shifts in Th1/Th2 cytokine ratios, with several studies demonstrating a reduction in pro-inflammatory Th1 dominance \u2014 a pattern frequently seen in women with recurrent pregnancy loss. NK cell cytotoxicity, often elevated in women with unexplained infertility, has also been shown to normalize in some patients on LDN protocols.",
+      "What makes LDN particularly interesting is its effect on regulatory T cells (Tregs), which play a critical role in immune tolerance during pregnancy. Early data suggests LDN may support Treg expansion, helping the body accept rather than attack an embryo. While large-scale randomized trials are still limited, the mechanistic evidence and clinical case data are compelling enough that many reproductive immunologists now include LDN in their protocols.",
+    ],
     topics: ["LDN", "Th1/Th2", "NK Cells", "Autoimmunity"],
     color: C.coral,
   },
   {
     tag: "Understanding Your Labs",
     title: "The Immune Panel Your OB Probably Never Ordered",
-    desc: "Th1/Th2 ratios, NK cell cytotoxicity, CD19+/CD5+ B cells, ANA titers — what they are, why they matter for fertility, and how to read yours.",
+    desc: "Th1/Th2 ratios, NK cell cytotoxicity, CD19+/CD5+ B cells, ANA titers \u2014 what they are, why they matter for fertility, and how to read yours.",
+    expanded: [
+      "Most OB-GYNs run a standard fertility panel: FSH, LH, estradiol, AMH, TSH. And those are important. But they tell you almost nothing about your immune system \u2014 which, for a significant percentage of women with unexplained infertility or recurrent loss, is where the real answers are hiding.",
+      "A reproductive immunology panel typically includes: Th1/Th2 cytokine ratios (measuring the balance between pro-inflammatory and anti-inflammatory immune responses), NK cell cytotoxicity (how aggressively your natural killer cells attack \u2014 including potentially an embryo), CD19+/CD5+ B cells (associated with autoantibody production), and ANA titers (a marker for autoimmune activity).",
+      "Understanding these numbers isn\u2019t just academic. Elevated NK cell activity above 15\u201318% cytotoxicity is considered a red flag by most reproductive immunologists. A Th1/Th2 ratio skewed toward Th1 dominance suggests your immune system may be creating a hostile environment for implantation. Positive ANA titers, especially at 1:80 or above, warrant further investigation into specific autoimmune conditions that can directly impact pregnancy outcomes.",
+    ],
     topics: ["Lab Interpretation", "Reproductive Immunology", "Fertility"],
     color: C.navy,
   },
   {
     tag: "Root Cause",
     title: "Autoimmune Infertility: The Diagnosis Nobody Talks About",
-    desc: "When your immune system is the reason you can't stay pregnant — the research, the markers, and what can actually be done about it.",
+    desc: "When your immune system is the reason you can\u2019t stay pregnant \u2014 the research, the markers, and what can actually be done about it.",
+    expanded: [
+      "Autoimmune infertility isn\u2019t a fringe diagnosis \u2014 it\u2019s an underdiagnosed one. Research suggests that immune dysfunction may be a contributing factor in up to 50% of cases classified as \u201Cunexplained\u201D infertility or recurrent pregnancy loss. Yet most women never receive the testing that would reveal it.",
+      "The mechanism is straightforward: in some women, the immune system fails to make the necessary shift from Th1 (attack mode) to Th2 (tolerance mode) that is required for successful implantation and pregnancy maintenance. The body essentially treats the embryo as a foreign invader. This can manifest as failed implantation, biochemical pregnancies, or losses in the first trimester.",
+      "Treatment protocols typically involve a combination of approaches: immunosuppressive medications like prednisone or intralipid infusions, immune modulators like LDN or hydroxychloroquine, and sometimes IVIG (intravenous immunoglobulin) for more severe cases. The key is identifying which specific immune pathways are dysregulated through comprehensive testing \u2014 and then targeting the treatment accordingly.",
+    ],
     topics: ["Autoimmunity", "RPL", "Immune Protocol"],
     color: C.purple,
   },
@@ -243,10 +258,100 @@ const articles = [
     tag: "Ingredient Science",
     title: "Myo-Inositol and D-Chiro Inositol: The Clinical Evidence",
     desc: "What the research actually shows about the 40:1 ratio, PCOS, ovulatory function, and why not all inositol supplements are the same.",
+    expanded: [
+      "Inositol has become one of the most talked-about supplements in fertility and PCOS management \u2014 but the details matter enormously. There are nine forms of inositol, and only two have substantial clinical evidence behind them: myo-inositol (MI) and D-chiro-inositol (DCI). The ratio between them is critical.",
+      "The body naturally maintains a 40:1 ratio of MI to DCI in most tissues, and research consistently shows that supplementing at this ratio produces the best outcomes for ovulatory function, insulin sensitivity, and oocyte quality. Studies have demonstrated that women with PCOS who supplement with the 40:1 ratio show improved menstrual regularity, reduced androgens, and better IVF outcomes compared to those taking MI alone or at different ratios.",
+      "Here\u2019s where it gets important: too much D-chiro-inositol can actually impair ovarian function. DCI at high doses has been shown to worsen oocyte quality in the ovaries, even while improving metabolic markers elsewhere. This is why the ratio matters \u2014 and why grabbing any inositol supplement off the shelf without checking the formulation can backfire. Look for products that explicitly state the 40:1 MI:DCI ratio, ideally at doses of 4000mg MI to 100mg DCI daily.",
+    ],
     topics: ["Inositol", "PCOS", "Ovulation", "Clinical Data"],
     color: C.green,
   },
 ];
+
+function ResearchCard({ article }) {
+  const [open, setOpen] = useState(false);
+  const a = article;
+
+  return (
+    <div
+      onClick={() => setOpen(!open)}
+      style={{
+        background: C.white, borderRadius: 18, padding: 22,
+        border: `1px solid ${open ? a.color + "40" : C.sand}`,
+        boxShadow: open ? `0 4px 20px rgba(45,36,33,0.08)` : "0 2px 12px rgba(45,36,33,0.04)",
+        cursor: "pointer", transition: "all 0.3s ease",
+        position: "relative", overflow: "hidden",
+      }}
+    >
+      <div style={{
+        position: "absolute", left: 0, top: 0, bottom: 0, width: 4,
+        background: a.color, borderRadius: "18px 0 0 18px",
+      }} />
+      <div style={{ paddingLeft: 8 }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+          <span style={{
+            fontSize: 9, letterSpacing: 2, textTransform: "uppercase",
+            color: a.color, fontWeight: 700,
+          }}>
+            {a.tag}
+          </span>
+          <span style={{
+            fontSize: 18, color: a.color, transition: "transform 0.3s ease",
+            transform: open ? "rotate(180deg)" : "rotate(0deg)",
+            flexShrink: 0, marginLeft: 12, lineHeight: 1,
+          }}>
+            {open ? "\u2212" : "+"}
+          </span>
+        </div>
+        <h3 style={{
+          fontFamily: "'Cormorant Garamond', serif", fontSize: 19, fontWeight: 700,
+          color: C.greyBlack, margin: "6px 0 6px 0", lineHeight: 1.25,
+        }}>
+          {a.title}
+        </h3>
+        <p style={{
+          fontSize: 12, color: C.greyBlack, opacity: 0.55, lineHeight: 1.6, margin: "0 0 10px 0",
+        }}>
+          {a.desc}
+        </p>
+
+        {/* Expanded content */}
+        <div style={{
+          maxHeight: open ? 800 : 0,
+          opacity: open ? 1 : 0,
+          overflow: "hidden",
+          transition: "max-height 0.5s ease, opacity 0.4s ease",
+        }}>
+          <div style={{
+            borderTop: `1px solid ${C.sand}`,
+            marginTop: 12, paddingTop: 16,
+          }}>
+            {a.expanded.map((paragraph, pi) => (
+              <p key={pi} style={{
+                fontSize: 13, color: C.greyBlack, opacity: 0.65, lineHeight: 1.75,
+                margin: pi < a.expanded.length - 1 ? "0 0 14px 0" : 0,
+              }}>
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </div>
+
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: open ? 14 : 0 }}>
+          {a.topics.map((t, j) => (
+            <span key={j} style={{
+              fontSize: 9, fontWeight: 600, padding: "3px 10px", borderRadius: 12,
+              background: a.color + "10", color: a.color,
+              fontFamily: "'Nunito Sans', sans-serif",
+            }}>
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function ResearchSection() {
   return (
@@ -278,48 +383,7 @@ function ResearchSection() {
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
           {articles.map((a, i) => (
             <FadeIn key={i} delay={i * 0.08}>
-              <div style={{
-                background: C.white, borderRadius: 18, padding: 22,
-                border: `1px solid ${C.sand}`,
-                boxShadow: "0 2px 12px rgba(45,36,33,0.04)",
-                cursor: "pointer", transition: "all 0.25s ease",
-                position: "relative", overflow: "hidden",
-              }}>
-                <div style={{
-                  position: "absolute", left: 0, top: 0, bottom: 0, width: 4,
-                  background: a.color, borderRadius: "18px 0 0 18px",
-                }} />
-                <div style={{ paddingLeft: 8 }}>
-                  <span style={{
-                    fontSize: 9, letterSpacing: 2, textTransform: "uppercase",
-                    color: a.color, fontWeight: 700,
-                  }}>
-                    {a.tag}
-                  </span>
-                  <h3 style={{
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: 19, fontWeight: 700,
-                    color: C.greyBlack, margin: "6px 0 6px 0", lineHeight: 1.25,
-                  }}>
-                    {a.title}
-                  </h3>
-                  <p style={{
-                    fontSize: 12, color: C.greyBlack, opacity: 0.55, lineHeight: 1.6, margin: "0 0 10px 0",
-                  }}>
-                    {a.desc}
-                  </p>
-                  <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-                    {a.topics.map((t, j) => (
-                      <span key={j} style={{
-                        fontSize: 9, fontWeight: 600, padding: "3px 10px", borderRadius: 12,
-                        background: a.color + "10", color: a.color,
-                        fontFamily: "'Nunito Sans', sans-serif",
-                      }}>
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <ResearchCard article={a} />
             </FadeIn>
           ))}
         </div>
