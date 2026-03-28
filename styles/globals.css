@@ -1,0 +1,30 @@
+/* Reset & base styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
+  background: #FFF9E8;
+  color: #2D2421;
+}
+
+a {
+  color: inherit;
+}
+
+input:focus {
+  border-color: #A1799B !important;
+  box-shadow: 0 0 0 3px rgba(161, 121, 155, 0.15);
+}
