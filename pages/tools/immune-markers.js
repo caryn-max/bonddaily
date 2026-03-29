@@ -391,7 +391,7 @@ export default function ImmuneMarkerPage() {
               color: C.purple, fontSize: 12, fontWeight: 600,
               fontFamily: "'Nunito Sans', sans-serif",
             }}>
-              \u2190 Bond Daily
+              {"\u2190"} Bond Daily
             </Link>
             <a href="https://bond.life" target="_blank" rel="noopener noreferrer" style={{
               textDecoration: "none", padding: "7px 18px", borderRadius: 20,
@@ -408,7 +408,7 @@ export default function ImmuneMarkerPage() {
             fontSize: 9, letterSpacing: 3.5, textTransform: "uppercase",
             color: C.purple, fontWeight: 700, margin: "0 0 10px 0"
           }}>
-            Bond \u00B7 Know Your Immune Markers
+            Bond {"\u00B7"} Know Your Immune Markers
           </p>
           <h1 style={{
             fontFamily: "'Cormorant Garamond', serif", fontSize: 28, fontWeight: 700,
