@@ -147,7 +147,7 @@ function Hero() {
             }}>
               Read the Research
             </a>
-            <a href="#tools" style={{
+            <a href="/tools/immune-markers" style={{
               textDecoration: "none", padding: "12px 28px", borderRadius: 28,
               background: "transparent", color: C.purple,
               border: `1.5px solid ${C.purple}`, fontSize: 12, fontWeight: 700,
@@ -464,16 +464,27 @@ function ToolsSection() {
                   }}>
                     {tool.desc}
                   </p>
-                  <span style={{
-                    display: "inline-block", padding: "8px 20px", borderRadius: 24,
-                    fontSize: 11, fontWeight: 700, letterSpacing: 0.5,
-                    fontFamily: "'Nunito Sans', sans-serif",
-                    background: tool.available ? tool.accent : C.sand,
-                    color: tool.available ? C.white : C.greyBlack,
-                    cursor: tool.available ? "pointer" : "default",
-                  }}>
-                    {tool.cta}
-                  </span>
+                  {tool.available ? (
+                    <a href="/tools/immune-markers" style={{
+                      display: "inline-block", padding: "8px 20px", borderRadius: 24,
+                      fontSize: 11, fontWeight: 700, letterSpacing: 0.5,
+                      fontFamily: "'Nunito Sans', sans-serif",
+                      background: tool.accent, color: C.white,
+                      cursor: "pointer", textDecoration: "none",
+                    }}>
+                      {tool.cta}
+                    </a>
+                  ) : (
+                    <span style={{
+                      display: "inline-block", padding: "8px 20px", borderRadius: 24,
+                      fontSize: 11, fontWeight: 700, letterSpacing: 0.5,
+                      fontFamily: "'Nunito Sans', sans-serif",
+                      background: C.sand, color: C.greyBlack,
+                      cursor: "default",
+                    }}>
+                      {tool.cta}
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
