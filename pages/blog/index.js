@@ -190,6 +190,7 @@ export default function DailyBlog({ posts, tags }) {
       <Head>
         <title>Bond Daily | Research & Insights on Hormones, Immunity & Reproductive Health</title>
         <meta name="description" content="Research-backed insights on hormones, immunity, and reproductive health — by the founder of BOND." />
+        <link rel="canonical" href="https://www.bonddaily.co/blog" />
       </Head>
 
       <div style={{ background: C.cream, minHeight: "100vh" }}>

@@ -104,6 +104,7 @@ export default function BlogPost({ post, relatedPosts }) {
       <Head>
         <title>{post.title} | Bond Daily</title>
         <meta name="description" content={post.excerpt} />
+        <link rel="canonical" href={`https://www.bonddaily.co/blog/${post.slug}`} />
       </Head>
 
       <div style={{ background: C.cream, minHeight: "100vh" }}>
