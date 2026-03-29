@@ -359,7 +359,7 @@ function JournalSection({ posts }) {
                   >
                     <div style={{
                       height: 140,
-                      background: post.heroGradient || `linear-gradient(135deg, ${C.purple} 0%, ${C.navy} 100%)`,
+                      background: post.heroImage ? `url(${post.heroImage}) center/cover` : (post.heroGradient || `linear-gradient(135deg, ${C.purple} 0%, ${C.navy} 100%)`),
                       position: "relative",
                     }}>
                       <div style={{

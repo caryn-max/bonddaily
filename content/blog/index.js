@@ -8,7 +8,7 @@ export const allPosts = [
     date: "2025-10-21",
     tags: ["luteal", "PMS"],
     excerpt: "So, what actually happens 48 hours before your period starts? Your body is going through a rapid hormonal withdrawal \u2014 especially progesterone.",
-    heroImage: null,
+    heroImage: "https://bond.life/cdn/shop/articles/IMG_2061_8570c351-f0f7-48b5-8f69-f14162e03e07.jpg?v=1761082714",
     heroGradient: "linear-gradient(135deg, #A1799B 0%, #44697C 100%)",
     content: `
 <p><strong>So, what actually happens 48 hours before your period starts?</strong></p>
@@ -90,7 +90,7 @@ export const allPosts = [
     date: "2025-09-15",
     tags: ["PCOS"],
     excerpt: "Polycystic Ovary Syndrome (PCOS) is one of the most common hormone conditions today \u2014 impacting 1 in 10 women of reproductive age.",
-    heroImage: null,
+    heroImage: "https://bond.life/cdn/shop/articles/BOND-PCOS-Checklist-Blog-Post.png?v=1761082669",
     heroGradient: "linear-gradient(135deg, #698A7E 0%, #44697C 100%)",
     content: `
 <p>Polycystic Ovary Syndrome (PCOS) is one of the most common hormone conditions today \u2014 impacting 1 in 10 women of reproductive age. But here\u2019s the problem: it\u2019s still under-diagnosed, under-treated, and often misunderstood.</p>
@@ -153,7 +153,7 @@ export const allPosts = [
     date: "2025-09-04",
     tags: ["inositol", "PCOS"],
     excerpt: "PCOS affects more than 1 in 10 women worldwide, yet it remains one of the most under-diagnosed conditions in women\u2019s health.",
-    heroImage: null,
+    heroImage: "https://bond.life/cdn/shop/articles/BOND-blog-post-PCOS-Awareness-Month.png?v=1761082762",
     heroGradient: "linear-gradient(135deg, #A1799B 0%, #698A7E 100%)",
     content: `
 <p>PCOS affects more than 1 in 10 women worldwide, yet it remains one of the most under-diagnosed and under-treated conditions in women\u2019s health. From irregular cycles and hormonal weight gain to mood instability and fertility struggles, the ripple effects of PCOS touch nearly every part of a woman\u2019s life.</p>
@@ -196,7 +196,7 @@ export const allPosts = [
     date: "2025-09-04",
     tags: ["hormonal acne"],
     excerpt: "Hormonal acne doesn\u2019t appear at random. Breakouts often cluster in specific areas, and the location can reveal a lot about the hormonal patterns at play.",
-    heroImage: null,
+    heroImage: "https://bond.life/cdn/shop/articles/BOND-blog-post-hormonal-acne-guide-image_d7134463-4c03-44da-b934-a8c7605c4f9b.png?v=1761082782",
     heroGradient: "linear-gradient(135deg, #F48F75 0%, #A1799B 100%)",
     content: `
 <p>Hormonal acne doesn\u2019t appear at random. Breakouts often cluster in specific areas of the face and body, and the location can reveal a lot about the hormonal patterns at play. Factors like androgens, cortisol, insulin, or natural fluctuations in estrogen and progesterone can all influence how and where acne shows up.</p>
@@ -241,7 +241,7 @@ export const allPosts = [
     date: "2025-09-03",
     tags: ["endometriosis", "gut health", "hormone balance"],
     excerpt: "New research is shining light on a surprising player in the endometriosis story: the gut microbiome.",
-    heroImage: null,
+    heroImage: "https://bond.life/cdn/shop/articles/Blog-post-gut-hormones-and-endometriosis-hero-image.png?v=1761082867",
     heroGradient: "linear-gradient(135deg, #698A7E 0%, #EDB468 100%)",
     content: `
 <p>For years, endometriosis has been viewed mainly through the lens of gynecology \u2014 a condition defined by lesions, pain, and fertility challenges. But new research is shining light on a surprising player in this story: the gut microbiome.</p>
@@ -285,7 +285,7 @@ export const allPosts = [
     date: "2025-09-01",
     tags: ["autoimmune infertility", "gut health", "immune system"],
     excerpt: "Histamine intolerance is a gastrointestinal disorder resulting from an excess of histamine in the body that can worsen PMS symptoms significantly.",
-    heroImage: null,
+    heroImage: "https://bond.life/cdn/shop/articles/itswhoopi0907_woman_in_pajamas_holding_a_cup_of_tea_in_the_ki_1_c5dd6e2a-c4a3-4ae1-aad1-b5532566b5d6.png?v=1761083035",
     heroGradient: "linear-gradient(135deg, #44697C 0%, #A1799B 100%)",
     content: `
 <h2>What is Histamine?</h2>
@@ -320,7 +320,7 @@ export const allPosts = [
     date: "2025-06-09",
     tags: ["cortisol", "PMS"],
     excerpt: "Stress affects everything \u2014 your mood, skin, energy, and especially your cycle. If you\u2019re dealing with intense PMS or anxiety before your period, high cortisol might be to blame.",
-    heroImage: null,
+    heroImage: "https://bond.life/cdn/shop/articles/itswhoopi0907_httpss.mj.runiTvlz1o-hHI_blurred_out_wellness_g_02c70d4a-eab4-4a6a-86c1-d45486d206c7_0.png?v=1761083073",
     heroGradient: "linear-gradient(135deg, #F48F75 0%, #EDB468 100%)",
     content: `
 <p>Stress affects everything \u2014 your mood, skin, energy, and especially your cycle. If you\u2019re dealing with intense PMS, anxiety before your period, or just feel off, high cortisol might be to blame. As your body\u2019s primary stress hormone, cortisol can throw your hormones out of sync and make every phase of your cycle feel harder.</p>
@@ -365,7 +365,7 @@ export const allPosts = [
     date: "2025-06-09",
     tags: ["insulin resistance", "metabolic health"],
     excerpt: "Insulin resistance affects millions of women and is often an overlooked factor in hormone imbalance, irregular cycles, fatigue, and more.",
-    heroImage: null,
+    heroImage: "https://bond.life/cdn/shop/articles/BOND-Blog-Post-Insulin-Resistant-Diet.png?v=1761083235",
     heroGradient: "linear-gradient(135deg, #44697C 0%, #698A7E 100%)",
     content: `
 <p>Insulin resistance affects millions of women and is often an overlooked factor in hormone imbalance, irregular cycles, fatigue, and more. The good news? The right nutrition, lifestyle shifts, and smart supplements can make a big impact.</p>
@@ -421,7 +421,7 @@ export const allPosts = [
     date: "2025-06-09",
     tags: ["cycle support", "hormone balance"],
     excerpt: "Hormonal imbalances are more common than most people realize \u2014 and when your hormones are out of sync, everything from mood to metabolism can be affected.",
-    heroImage: null,
+    heroImage: "https://bond.life/cdn/shop/articles/BOND-Product-Lineup-Hprmone-Balance.png?v=1761083314",
     heroGradient: "linear-gradient(135deg, #EDB468 0%, #A1799B 100%)",
     content: `
 <p>Hormonal imbalances are more common than most people realize \u2014 and when your hormones are out of sync, everything from mood to metabolism can be affected. The good news? Nutrition plays a huge role in bringing the body back to balance, and the right supplements can be a powerful tool for support.</p>
@@ -463,7 +463,7 @@ export const allPosts = [
     date: "2025-06-09",
     tags: ["cycle regulation"],
     excerpt: "The Strawberry Moon \u2014 a full moon rich in symbolism and seasonal significance. Named by Indigenous tribes to mark the peak of strawberry harvesting.",
-    heroImage: null,
+    heroImage: "https://bond.life/cdn/shop/articles/Product-Cycle-Care-PMS-Support.png?v=1761083374",
     heroGradient: "linear-gradient(135deg, #F48F75 0%, #698A7E 100%)",
     content: `
 <p>On June 11, 2025, the night sky will be illuminated by the Strawberry Moon \u2014 a full moon rich in symbolism and seasonal significance. Named by Indigenous tribes like the Algonquin to mark the peak of strawberry harvesting, this moon signifies ripening, reflection, and readiness for new beginnings.</p>
@@ -491,7 +491,7 @@ export const allPosts = [
     date: "2025-05-02",
     tags: ["hormone balance"],
     excerpt: "Hormones are chemical messengers that influence nearly every aspect of your health \u2014 think mood, sleep, energy, libido, metabolism, and your menstrual cycle.",
-    heroImage: null,
+    heroImage: "https://bond.life/cdn/shop/articles/BOND-Blog-Post-Hormone-Balance.png?v=1761083414",
     heroGradient: "linear-gradient(135deg, #A1799B 0%, #EDB468 100%)",
     content: `
 <p>Hormones are chemical messengers that influence nearly every aspect of your health \u2014 think mood, sleep, energy, libido, metabolism, and your menstrual cycle. They\u2019re produced by your endocrine glands and work together like an orchestra. When one hormone is out of tune, it throws the whole system off.</p>
@@ -558,7 +558,7 @@ export const allPosts = [
     date: "2025-05-02",
     tags: ["cycle regulation", "fertility", "inositol", "PCOS"],
     excerpt: "The gentle powerhouse for cravings, cycles, and hormonal calm \u2014 especially when life feels anything but.",
-    heroImage: null,
+    heroImage: "https://bond.life/cdn/shop/articles/BOND-Product-Inositol-Powder-Hormone-Balance-PCOS_0b894e11-9ceb-4ed8-95c0-8d420d9852ae.png?v=1761082900",
     heroGradient: "linear-gradient(135deg, #698A7E 0%, #A1799B 100%)",
     content: `
 <p>Inositol is a naturally occurring carbohydrate found in the human body and in foods such as fruits, beans, grains, and nuts. It plays a critical role in cellular function and hormonal regulation.</p>
@@ -607,7 +607,7 @@ export const allPosts = [
     date: "2025-03-19",
     tags: ["autoimmune infertility", "fertility"],
     excerpt: "Most of us think about the immune system in terms of fighting infections, but during pregnancy, it plays a completely different role.",
-    heroImage: null,
+    heroImage: "https://bond.life/cdn/shop/articles/Second_Blog_Photo.png?v=1761083159",
     heroGradient: "linear-gradient(135deg, #44697C 0%, #F48F75 100%)",
     content: `
 <p>Most of us think about the immune system in terms of fighting infections, but during pregnancy, it plays a completely different role \u2014 helping or hindering fertility, implantation, and a healthy pregnancy. Your body undergoes three major immune shifts during pregnancy, balancing inflammation and immune tolerance to support fetal development.</p>
@@ -654,7 +654,7 @@ export const allPosts = [
     date: "2025-03-09",
     tags: ["autoimmune infertility", "gut health", "immune system"],
     excerpt: "When it comes to fertility, there\u2019s a major player working behind the scenes: the immune system. Reproductive immunology explores how the body\u2019s defense mechanisms interact with fertility and pregnancy.",
-    heroImage: null,
+    heroImage: "https://bond.life/cdn/shop/articles/Immune_System_Blog_Photo.png?v=1761083117",
     heroGradient: "linear-gradient(135deg, #A1799B 0%, #44697C 100%)",
     content: `
 <p>When it comes to fertility, hormones and reproductive organs often steal the spotlight. But there\u2019s another major player working behind the scenes: the immune system. The same system that fights off colds and infections also plays a crucial role in supporting \u2014 or challenging \u2014 pregnancy success.</p>
