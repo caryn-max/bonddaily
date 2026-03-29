@@ -78,6 +78,7 @@ function Nav() {
             { label: "Research", href: "/daily" },
             { label: "Journal", href: "/blog" },
             { label: "Our Story", href: "#story" },
+            { label: "Shop", href: "https://bond.life/collections/shop-all" },
           ].map(l => (
             <a key={l.label} href={l.href} style={{
               textDecoration: "none", fontSize: 11, fontWeight: 600,
@@ -90,7 +91,7 @@ function Nav() {
               onMouseLeave={e => e.target.style.opacity = 0.6}
             >{l.label}</a>
           ))}
-          <a href="/blog" style={{
+          <a href="https://bond.life/collections/shop-all" style={{
             textDecoration: "none", fontSize: 10, fontWeight: 700,
             letterSpacing: 1.8, textTransform: "uppercase",
             fontFamily: "'Nunito Sans', sans-serif",
@@ -98,7 +99,7 @@ function Nav() {
             padding: "9px 22px", borderRadius: 28,
             transition: "background 0.2s ease",
           }}>
-            Read Now
+            Shop BOND
           </a>
         </div>
       </div>
@@ -650,13 +651,35 @@ function Footer() {
                 fontSize: 9, letterSpacing: 2, textTransform: "uppercase",
                 color: C.greyBlack, fontWeight: 700, margin: "0 0 12px 0", opacity: 0.4,
                 fontFamily: "'Nunito Sans', sans-serif",
-              }}>Connect</p>
-              {["Instagram", "Newsletter", "Contact"].map((l, i) => (
-                <a key={i} href="#" style={{
+              }}>Shop BOND</p>
+              {[
+                { label: "All Products", href: "https://bond.life/collections/shop-all" },
+                { label: "Best Sellers", href: "https://bond.life/collections/best-sellers" },
+                { label: "Conception & Fertility", href: "https://bond.life/collections/conception-fertility-potential" },
+              ].map((l, i) => (
+                <a key={i} href={l.href} style={{
                   display: "block", textDecoration: "none",
                   fontSize: 13, color: C.greyBlack, opacity: 0.5,
                   margin: "0 0 8px 0", fontFamily: "'Nunito Sans', sans-serif",
-                }}>{l}</a>
+                }}>{l.label}</a>
+              ))}
+            </div>
+            <div>
+              <p style={{
+                fontSize: 9, letterSpacing: 2, textTransform: "uppercase",
+                color: C.greyBlack, fontWeight: 700, margin: "0 0 12px 0", opacity: 0.4,
+                fontFamily: "'Nunito Sans', sans-serif",
+              }}>Connect</p>
+              {[
+                { label: "Instagram", href: "https://www.instagram.com/_bondlife" },
+                { label: "TikTok", href: "https://www.tiktok.com/@_bondlife" },
+                { label: "Contact", href: "https://bond.life/pages/contact" },
+              ].map((l, i) => (
+                <a key={i} href={l.href} style={{
+                  display: "block", textDecoration: "none",
+                  fontSize: 13, color: C.greyBlack, opacity: 0.5,
+                  margin: "0 0 8px 0", fontFamily: "'Nunito Sans', sans-serif",
+                }}>{l.label}</a>
               ))}
             </div>
           </div>

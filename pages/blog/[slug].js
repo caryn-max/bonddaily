@@ -72,6 +72,95 @@ function TagPill({ tag }) {
   );
 }
 
+/* ─── Product Callout ─── */
+const productMap = [
+  {
+    keywords: ["PCOS", "inositol", "insulin resistance", "metabolic health"],
+    name: "Myo & D-Chiro Inositol Powder",
+    desc: "The 40:1 ratio studied in clinical PCOS trials — for blood sugar, cravings, and ovulation support.",
+    href: "https://bond.life/products/myo-d-chiro-inositol-powder",
+    accent: C.purple,
+  },
+  {
+    keywords: ["fertility", "immune system", "autoimmune infertility"],
+    name: "Conception Boost",
+    desc: "Targeted nutrients for egg quality, implantation support, and reproductive immune balance.",
+    href: "https://bond.life/products/conception-boost",
+    accent: C.coral,
+  },
+  {
+    keywords: ["PMS", "luteal", "cortisol", "cycle support", "cycle regulation"],
+    name: "Cycle Care",
+    desc: "Adaptogenic support for PMS, cortisol, and the hormonal shifts that hit hardest in your luteal phase.",
+    href: "https://bond.life/products/cycle-care",
+    accent: C.green,
+  },
+  {
+    keywords: ["hormone balance", "hormone production", "hormonal acne"],
+    name: "Daily Balance",
+    desc: "Foundational hormone support for thyroid, adrenal, and reproductive balance — daily.",
+    href: "https://bond.life/products/daily-balance",
+    accent: C.navy,
+  },
+  {
+    keywords: ["gut health", "endometriosis", "histamine levels"],
+    name: "4-in-1 Female Probiotic",
+    desc: "Clinically studied strains for gut health, vaginal flora, and the estrogen-gut connection.",
+    href: "https://bond.life/products/4-in-1-female-probiotic",
+    accent: C.green,
+  },
+];
+
+function ProductCallout({ tags }) {
+  const lowerTags = tags.map(t => t.toLowerCase());
+  const match = productMap.find(p =>
+    p.keywords.some(k => lowerTags.includes(k.toLowerCase()))
+  );
+  if (!match) return null;
+
+  return (
+    <section style={{
+      maxWidth: 720, margin: "0 auto", padding: "0 20px 48px",
+    }}>
+      <div style={{
+        background: C.white, borderRadius: 16,
+        border: `1px solid ${C.sand}`,
+        padding: "32px 28px",
+        display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap",
+      }}>
+        <div style={{ flex: "1 1 300px" }}>
+          <p style={{
+            fontSize: 9, letterSpacing: 3, textTransform: "uppercase",
+            color: match.accent, fontWeight: 700, margin: "0 0 8px 0",
+            fontFamily: "'Nunito Sans', sans-serif",
+          }}>From the BOND Collection</p>
+          <h4 style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: 22, fontWeight: 700, color: C.greyBlack,
+            margin: "0 0 8px 0", lineHeight: 1.25,
+          }}>{match.name}</h4>
+          <p style={{
+            fontSize: 14, color: C.greyBlack, opacity: 0.55,
+            lineHeight: 1.6, margin: "0 0 16px 0",
+            fontFamily: "'Nunito Sans', sans-serif",
+          }}>{match.desc}</p>
+          <a href={match.href} style={{
+            textDecoration: "none", display: "inline-block",
+            padding: "10px 24px", borderRadius: 24,
+            background: match.accent, color: C.white,
+            fontSize: 11, fontWeight: 700, letterSpacing: 1,
+            fontFamily: "'Nunito Sans', sans-serif",
+            textTransform: "uppercase",
+            transition: "opacity 0.2s ease",
+          }}>
+            Learn More on BOND →
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── Footer ─── */
 function Footer() {
   return (
@@ -158,6 +247,9 @@ export default function BlogPost({ post, relatedPosts }) {
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>
+
+        {/* Product Recommendation */}
+        <ProductCallout tags={post.tags} />
 
         {/* Related Posts */}
         {relatedPosts.length > 0 && (
