@@ -474,9 +474,9 @@ function ResearchTeaser() {
             display: "flex", flexDirection: "column", gap: 12,
           }}>
             {[
-              { tag: "Understanding Your Labs", title: "The Immune Panel Your OB Never Ordered", color: C.navy, href: "/daily" },
-              { tag: "Ingredient Science", title: "Myo-Inositol & D-Chiro: The Clinical Evidence", color: C.green, href: "/daily" },
-              { tag: "Fertility + Immunity", title: "What Your NK Cells Are Actually Telling You", color: C.coral, href: "/daily" },
+              { tag: "Understanding Your Labs", title: "The Immune Panel Your OB Never Ordered", color: C.navy, href: "/blog/how-your-immune-system-affects-fertility" },
+              { tag: "Ingredient Science", title: "Myo-Inositol & D-Chiro: The Clinical Evidence", color: C.green, href: "/blog/why-inositol-works" },
+              { tag: "Fertility + Immunity", title: "What Your NK Cells Are Actually Telling You", color: C.coral, href: "/blog/how-your-immune-system-changes-during-pregnancy" },
             ].map((a, i) => (
               <a key={i} href={a.href} style={{
                 textDecoration: "none",
