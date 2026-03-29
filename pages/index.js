@@ -75,8 +75,8 @@ function Nav() {
 
         <div style={{ display: "flex", gap: 32, alignItems: "center" }}>
           {[
-            { label: "Shop", href: "/collections" },
             { label: "Research", href: "/daily" },
+            { label: "Journal", href: "/blog" },
             { label: "Our Story", href: "#story" },
           ].map(l => (
             <a key={l.label} href={l.href} style={{
@@ -90,7 +90,7 @@ function Nav() {
               onMouseLeave={e => e.target.style.opacity = 0.6}
             >{l.label}</a>
           ))}
-          <a href="/collections" style={{
+          <a href="/blog" style={{
             textDecoration: "none", fontSize: 10, fontWeight: 700,
             letterSpacing: 1.8, textTransform: "uppercase",
             fontFamily: "'Nunito Sans', sans-serif",
@@ -98,7 +98,7 @@ function Nav() {
             padding: "9px 22px", borderRadius: 28,
             transition: "background 0.2s ease",
           }}>
-            Shop Now
+            Read Now
           </a>
         </div>
       </div>
@@ -159,13 +159,13 @@ function Hero() {
             lineHeight: 1.75, margin: "0 auto 40px",
             maxWidth: 520, fontFamily: "'Nunito Sans', sans-serif",
           }}>
-            Science-backed supplements and research for hormones, immunity,
+            Science-backed research and education for hormones, immunity,
             and reproductive health. Built by a woman who lived it.
           </p>
         </FadeIn>
         <FadeIn delay={0.36}>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/collections" style={{
+            <a href="/blog" style={{
               textDecoration: "none", padding: "14px 36px", borderRadius: 32,
               background: C.greyBlack, color: C.white,
               fontSize: 12, fontWeight: 700, letterSpacing: 1,
@@ -173,7 +173,7 @@ function Hero() {
               textTransform: "uppercase",
               transition: "transform 0.2s ease, box-shadow 0.2s ease",
             }}>
-              Shop the Collection
+              Explore the Journal
             </a>
             <a href="/daily" style={{
               textDecoration: "none", padding: "14px 36px", borderRadius: 32,
@@ -209,8 +209,8 @@ function Hero() {
 // ─── Philosophy Strip ───
 function PhilosophyStrip() {
   const pillars = [
-    { label: "Research-Led", desc: "Every product starts with published clinical data, not trends." },
-    { label: "Transparently Dosed", desc: "Full-disclosure labels. No proprietary blends. No hiding." },
+    { label: "Research-Led", desc: "Every article starts with published clinical data, not trends." },
+    { label: "Transparent Science", desc: "Real studies, cited sources, and plain-language explanations." },
     { label: "Woman-Founded", desc: "Built from seven years of personal health advocacy." },
   ];
 
@@ -245,23 +245,29 @@ function PhilosophyStrip() {
   );
 }
 
-// ─── Featured Products ───
-function FeaturedProducts() {
-  const products = [
+// ─── Research Deep Dives ───
+function ResearchDeepDives() {
+  const topics = [
     {
-      name: "The Fertility Foundation",
-      subtitle: "Myo-Inositol + D-Chiro at the clinically studied 40:1 ratio",
+      name: "Fertility & Inositol",
+      subtitle: "The clinical evidence behind Myo-Inositol and D-Chiro at the 40:1 ratio — what the research actually shows for PCOS, egg quality, and ovulation.",
+      tag: "Ingredient Science",
       accent: C.purple,
+      href: "/blog/why-inositol-works",
     },
     {
-      name: "The Immune Balance",
-      subtitle: "Targeted support for Th1/Th2 equilibrium and NK cell modulation",
+      name: "Immunity & Pregnancy",
+      subtitle: "Th1/Th2 cytokine ratios, NK cell activity, and what your immune labs are telling you about implantation and recurrent loss.",
+      tag: "Understanding Your Labs",
       accent: C.coral,
+      href: "/blog/how-your-immune-system-affects-fertility",
     },
     {
-      name: "The Hormone Harmony",
-      subtitle: "Thyroid, adrenal, and reproductive hormone co-factors in one formula",
+      name: "Hormonal Balance",
+      subtitle: "From cortisol and insulin resistance to thyroid function and cycle regulation — the science your doctor doesn\u2019t have time to explain.",
+      tag: "Hormones",
       accent: C.navy,
+      href: "/blog/the-best-supplements-for-female-hormone-balance",
     },
   ];
 
@@ -277,13 +283,13 @@ function FeaturedProducts() {
               fontSize: 10, letterSpacing: 4, textTransform: "uppercase",
               color: C.purple, fontWeight: 700, margin: "0 0 14px 0",
               fontFamily: "'Nunito Sans', sans-serif",
-            }}>The Collection</p>
+            }}>The Research</p>
             <h2 style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: 36, fontWeight: 600,
               color: C.greyBlack, margin: 0, lineHeight: 1.15,
             }}>
-              Formulated from the data.
+              Built from the data.
               <br />
               <span style={{ opacity: 0.4 }}>Not the marketing.</span>
             </h2>
@@ -295,9 +301,9 @@ function FeaturedProducts() {
           gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
           gap: 20,
         }}>
-          {products.map((p, i) => (
+          {topics.map((p, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <a href="/collections" style={{ textDecoration: "none" }}>
+              <a href={p.href} style={{ textDecoration: "none" }}>
                 <div style={{
                   background: C.white, borderRadius: 20,
                   border: `1px solid ${C.sand}`,
@@ -314,15 +320,21 @@ function FeaturedProducts() {
                     e.currentTarget.style.boxShadow = "none";
                   }}
                 >
-                  {/* Placeholder image area */}
+                  {/* Gradient hero area */}
                   <div style={{
-                    height: 280,
-                    background: `linear-gradient(135deg, ${C.cream} 0%, ${p.accent}08 100%)`,
+                    height: 200,
+                    background: `linear-gradient(135deg, ${C.cream} 0%, ${p.accent}15 100%)`,
                     display: "flex", alignItems: "center", justifyContent: "center",
+                    flexDirection: "column", gap: 8,
                   }}>
                     <span style={{
+                      fontSize: 9, letterSpacing: 3, textTransform: "uppercase",
+                      color: p.accent, fontWeight: 700,
+                      fontFamily: "'Nunito Sans', sans-serif",
+                    }}>{p.tag}</span>
+                    <span style={{
                       fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: 48, fontWeight: 300, color: p.accent, opacity: 0.2,
+                      fontSize: 36, fontWeight: 300, color: p.accent, opacity: 0.25,
                     }}>BOND</span>
                   </div>
 
@@ -341,7 +353,7 @@ function FeaturedProducts() {
                       fontSize: 10, fontWeight: 700, letterSpacing: 1.5,
                       textTransform: "uppercase", color: p.accent,
                       fontFamily: "'Nunito Sans', sans-serif",
-                    }}>Learn More →</span>
+                    }}>Read the Research →</span>
                   </div>
                 </div>
               </a>
@@ -351,14 +363,14 @@ function FeaturedProducts() {
 
         <FadeIn delay={0.3}>
           <div style={{ textAlign: "center", marginTop: 40 }}>
-            <a href="/collections" style={{
+            <a href="/blog" style={{
               textDecoration: "none", fontSize: 11, fontWeight: 700,
               letterSpacing: 1.5, textTransform: "uppercase",
               color: C.greyBlack, opacity: 0.5,
               fontFamily: "'Nunito Sans', sans-serif",
               borderBottom: `1px solid ${C.sand}`,
               paddingBottom: 2,
-            }}>View All Products →</a>
+            }}>View All Articles →</a>
           </div>
         </FadeIn>
       </div>
@@ -448,7 +460,7 @@ function ResearchTeaser() {
             color: C.greyBlack, margin: "0 0 14px 0", lineHeight: 1.2,
           }}>
             The research behind
-            <br />the products.
+            <br />the science.
           </h2>
           <p style={{
             fontSize: 14, color: C.greyBlack, opacity: 0.5,
@@ -592,7 +604,7 @@ function Footer() {
               margin: "8px 0 0", maxWidth: 240,
               fontFamily: "'Nunito Sans', sans-serif",
             }}>
-              Science-backed wellness for women who want the real data.
+              Research-backed education for women who want the real data.
             </p>
           </div>
 
@@ -602,13 +614,17 @@ function Footer() {
                 fontSize: 9, letterSpacing: 2, textTransform: "uppercase",
                 color: C.greyBlack, fontWeight: 700, margin: "0 0 12px 0", opacity: 0.4,
                 fontFamily: "'Nunito Sans', sans-serif",
-              }}>Shop</p>
-              {["All Products", "Best Sellers", "Bundles"].map((l, i) => (
-                <a key={i} href="/collections" style={{
+              }}>Research</p>
+              {[
+                { label: "All Articles", href: "/blog" },
+                { label: "Fertility & Immunity", href: "/blog/how-your-immune-system-affects-fertility" },
+                { label: "Hormonal Balance", href: "/blog/the-best-supplements-for-female-hormone-balance" },
+              ].map((l, i) => (
+                <a key={i} href={l.href} style={{
                   display: "block", textDecoration: "none",
                   fontSize: 13, color: C.greyBlack, opacity: 0.5,
                   margin: "0 0 8px 0", fontFamily: "'Nunito Sans', sans-serif",
-                }}>{l}</a>
+                }}>{l.label}</a>
               ))}
             </div>
             <div>
@@ -616,13 +632,17 @@ function Footer() {
                 fontSize: 9, letterSpacing: 2, textTransform: "uppercase",
                 color: C.greyBlack, fontWeight: 700, margin: "0 0 12px 0", opacity: 0.4,
                 fontFamily: "'Nunito Sans', sans-serif",
-              }}>Learn</p>
-              {["Research", "Immune Tools", "Book"].map((l, i) => (
-                <a key={i} href="/daily" style={{
+              }}>Tools</p>
+              {[
+                { label: "Immune Markers", href: "/tools/immune-markers" },
+                { label: "Immune Data", href: "/blog/ldn-immune-data" },
+                { label: "BOND Daily", href: "/daily" },
+              ].map((l, i) => (
+                <a key={i} href={l.href} style={{
                   display: "block", textDecoration: "none",
                   fontSize: 13, color: C.greyBlack, opacity: 0.5,
                   margin: "0 0 8px 0", fontFamily: "'Nunito Sans', sans-serif",
-                }}>{l}</a>
+                }}>{l.label}</a>
               ))}
             </div>
             <div>
@@ -673,7 +693,7 @@ export default function Home() {
     <>
       <Head>
         <title>BOND — Science-Backed Wellness for Hormones, Immunity & Reproductive Health</title>
-        <meta name="description" content="Research-led supplements and tools for women navigating hormones, immunity, and fertility. Built by a woman who spent seven years searching for answers." />
+        <meta name="description" content="Research-led education and tools for women navigating hormones, immunity, and fertility. Built by a woman who spent seven years searching for answers." />
       </Head>
       <div style={{
         background: C.cream, minHeight: "100vh",
@@ -682,7 +702,7 @@ export default function Home() {
         <Nav />
         <Hero />
         <PhilosophyStrip />
-        <FeaturedProducts />
+        <ResearchDeepDives />
         <StorySection />
         <ResearchTeaser />
         <SubscribeSection />
