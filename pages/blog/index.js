@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { getAllPosts, getAllTags } from "../lib/posts";
+import { getAllPosts, getAllTags } from "../../lib/posts";
 
 const C = {
   cream: "#FFF9E8",
