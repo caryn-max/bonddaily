@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    {
+      "source": "/blog/:slug",
+      "destination": "https://bond.life/blogs/thedaily/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "https://bond.life/blogs/thedaily",
+      "permanent": true
+    },
+    {
+      "source": "/daily",
+      "destination": "https://bond.life/blogs/thedaily",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "destination": "https://bond.life/blogs/thedaily",
+      "permanent": true
+    }
+  ]
+}
